@@ -8,7 +8,7 @@ function list(is_showing = false) {
     return knex(tableNameWithAlias)
       .join("movies_theaters as mt", "m.movie_id", "mt.movie_id")
       .select(
-        "m.movie_id as id",
+        "m.movie_id",
         "m.title",
         "m.runtime_in_minutes",
         "m.rating",
@@ -21,7 +21,7 @@ function list(is_showing = false) {
   }
   return knex(tableNameWithAlias)
     .select(
-      "m.movie_id as id",
+      "m.movie_id",
       "m.title",
       "m.runtime_in_minutes",
       "m.rating",
